@@ -30,8 +30,9 @@ variable "name" {
 
 variable "identity_ids" {
   type        = list(string)
-  description = "List of user assigned identity IDs"
+  description = "List of user assigned identity IDs (cannot be used with Free SKU)"
   default     = null
+  # TODO: add validation after fix https://github.com/hashicorp/terraform/issues/25609
 }
 
 variable "sku_tier" {

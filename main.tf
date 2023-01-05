@@ -5,9 +5,12 @@ resource "azurerm_static_site" "this" {
   sku_tier            = var.sku_tier
   sku_size            = var.sku_size
   tags                = var.tags
-  identity {
-    type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
-    identity_ids = var.identity_ids
+  dynamic "identity" {
+    for_each = var.sku_tier == "Free" ? toset([]) : toset([1])
+    content {
+      type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
+      identity_ids = var.identity_ids
+    }
   }
 }
 
