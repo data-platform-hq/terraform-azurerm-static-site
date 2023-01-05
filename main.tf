@@ -12,7 +12,7 @@ resource "azurerm_static_site" "this" {
 }
 
 resource "azurerm_static_site_custom_domain" "this" {
-  count = var.domain_name == null ? 0 : 1
+  count           = var.domain_name == null ? 0 : 1
   static_site_id  = azurerm_static_site.this.id
   domain_name     = var.domain_name
   validation_type = var.validation_type
