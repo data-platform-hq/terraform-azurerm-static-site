@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/data-platform-hq/terraform-azurerm-static-site/compare/v1.0.0...v1.0.1) (2023-01-05)
+
+
+### Bug Fixes
+
+* identity and free tier ([565d489](https://github.com/data-platform-hq/terraform-azurerm-static-site/commit/565d489e2a5a8b73e43d874b0eb8fe394cd56dd0))
+
 # 1.0.0 (2023-01-05)
 
 
